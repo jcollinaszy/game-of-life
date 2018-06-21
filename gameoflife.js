@@ -1,12 +1,12 @@
 let interval = null;		// generation change timer
-let speed = 100;			// generation change speed 
-let size = 11;				// tile size for zoom
-let cSize = [0, 0];			// canvas size
+let speed = 100;		// generation change speed 
+let size = 11;			// tile size for zoom
+let cSize = [0, 0];		// canvas size
 let offset = [0, 0];		// offset for centering
 let offset2 = [0, 0];		// offset for drag
-let pSize = [0, 0]			// pattern size
-let alive = {};				// current pattern
-let generation = 0;			// generation counter
+let pSize = [0, 0]		// pattern size
+let alive = {};			// current pattern
+let generation = 0;		// generation counter
 
 //default patterns
 let patterns = {
