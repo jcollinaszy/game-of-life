@@ -1,0 +1,137 @@
+body {
+	background: #36393e;
+}
+div.slider-handle.min-slider-handle.round {
+	background: #28a745;
+}
+div.slider-handle.min-slider-handle.round:hover {
+	cursor: pointer;
+}
+h5 {
+	padding-bottom: 10px;
+}
+
+#size-slider .slider-selection, #speed-slider .slider-selection {
+	background: #484b51;
+}
+#text-size, #text-speed {
+	padding-left: 10px;
+}
+#speed-slider {
+	width: 200px; display: inline-block;
+}
+#run-button {
+	min-width: 57px;
+}
+
+.animated {
+	transition: background 1s ease, color 1s ease;
+}
+
+.patterns {
+	background: #28a745; 
+	color: #fff; 
+}
+.patterns:hover {
+	background: #28a745; 
+	color: #fff; 
+	cursor: pointer;
+}
+
+.card, .collapsed{
+	background: #2f3136; 
+	color: #a9aaac;
+}
+.slider-track-high, .card-color {
+	background: #202225;
+}
+
+.list-group-item {
+	background: #484b51; 
+	color: #a9aaac; 
+}
+.list-group-item:hover {
+	background: #a9aaac; 
+	color: #484b51; 
+	cursor: pointer;
+}
+
+.card-body {
+	padding: 15px;
+}
+.card-header > a {
+	color: #a9aaac;
+}
+.card-header > a:hover {
+	text-decoration: none;
+}
+
+.control-button {
+	display: inline-block; 
+	width: fit-content;
+}
+.control-button:hover {
+	background: #484b51; 
+	cursor: pointer;
+} 
+
+.start-button {
+	background: #2f3136; 
+	color: #a9aaac; 
+}
+.start-button:hover {
+	background: #28a745;  
+	color: #fff; 
+	cursor: pointer;
+}
+
+.stop-button {
+	background: #2f3136; 
+}
+.stop-button:hover {
+	background: #dc3545; 
+	color: #fff; 
+	cursor: pointer;
+}
+
+.pattern-picker {
+	padding-left: 0px;
+}
+.pattern-picker-card {
+	margin-top: 30px;
+}
+
+.main-rows {
+	margin-top: 15px;
+}
+.controls {
+	justify-content: space-around;
+}
+
+.slider-card {
+	width: 330px;
+}
+.slider-body {
+	padding: 6px; 
+	height: 100%;
+}
+.slider-title {
+	padding-right: 10px; 
+	padding-left: 10px;
+}
+
+.main-buttons {
+	padding: 6px; 
+	height: 100%;
+	padding-left: 12px; 
+	padding-right: 12px;
+}
+.gen-card {
+	width: 180px; 
+	display: inline-block;
+}
+.gen-body {
+	padding: 6px; 
+	padding-left: 10px; 
+	height: 100%;
+}

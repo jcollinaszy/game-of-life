@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Game of Life</title>
+		
+		<meta name="description" content="Conway's Game of Life Implementation">
+		<meta name="keywords" content="conway, game of life, cellular automata">
+		<meta name="author" content="Juraj Collinaszy">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.9.0/css/bootstrap-slider.min.css" integrity="sha256-pO9/5PQba+AqEbehe+LDIXgbKSXTlmwgoeayBfGRwjw=" crossorigin="anonymous" />
+		
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.9.0/bootstrap-slider.min.js" integrity="sha256-NiU5YXcnxmS7LbwmzIDncQxjSF32v/p1TtCB76q9X/4=" crossorigin="anonymous"></script>
+		
+		
+		<script type="application/javascript" src="gameoflife.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row main-rows">
+				<div class="col">
+					<div class="card w-100 card-color">
+						<div class="card-body">
+							<canvas id="canvas" width="800" height="565"></canvas>
+						</div>
+					</div>
+				</div>
+				<div class="col pattern-picker">
+					<div class="card w-100 card-color pattern-picker-card">
+						<div class="card-body"> 
+							<center>
+								<h5>Patterns</h5>
+							</center>
+							<div id="accordion" role="tablist" aria-multiselectable="true">
+								<div class="card">
+									<div class="card-header patterns animated collapsed" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+										<a>Still Lifes</a>
+									</div>
+									<div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+										<div class="card-block">
+											<ul class="list-group list-group-flush">
+												<li class="list-group-item animated">Block</li>
+												<li class="list-group-item animated">Beehive</li>
+												<li class="list-group-item animated">Loaf</li>
+												<li class="list-group-item animated">Boat</li>
+												<li class="list-group-item animated">Tub</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-header patterns animated collapsed" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+										<a>Oscillators</a>
+									</div>
+									<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+										<div class="card-block">
+											<ul class="list-group list-group-flush">
+												<li class="list-group-item animated">Blinker</li>
+												<li class="list-group-item animated">Toad</li>
+												<li class="list-group-item animated">Beacon</li>
+												<li class="list-group-item animated">Pulsar</li>
+												<li class="list-group-item animated">Pentadecathlon</li>
+											</ul>						 
+										</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-header patterns animated collapsed" role="tab" id="headingThree" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+										<a>Spaceships</a>					  
+									</div>
+									<div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+										<div class="card-block">
+											<ul class="list-group list-group-flush">
+												<li class="list-group-item animated">Glider</li>
+												<li class="list-group-item animated">Lightweight Spaceship</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-header patterns animated collapsed" role="tab" id="headingFour" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+										<a>Infinite</a>
+									</div>
+									<div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+										<div class="card-block">
+											<ul class="list-group list-group-flush">
+												<li class="list-group-item animated">Gosper Glider Gun</li>
+												<li class="list-group-item animated">Infinite 1</li>
+												<li class="list-group-item animated">Infinite 2</li>
+												<li class="list-group-item animated">Infinite 3</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-header patterns animated collapsed" role="tab" id="headingFive" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+										<a>Other</a>
+									</div>
+									<div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
+										<div class="card-block">
+											<ul class="list-group list-group-flush">
+												<li class="list-group-item animated">The R-pentomino</li>
+												<li class="list-group-item animated">Diehard</li>
+												<li class="list-group-item animated">Acorn</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>		
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row main-rows">
+				<div class="card w-100 card-color">
+					<div class="card-body"> 
+						<div class="row controls">
+							<div class="card gen-card">
+								<div class="card-body gen-body">
+									<a> Generation : </a><a id="counter">0</a>
+								</div>
+							</div>
+							<div id="run-card" class="card start-button animated">
+								<div id="run-button" class="card-body main-buttons animated">
+									<a>Start</a>
+								</div>
+							</div>
+							<div class="card control-button animated">
+								<div id="next-button" class="card-body main-buttons">
+									<a>Next</a>
+								</div>
+							</div>
+							<div class="card control-button animated">
+								<div id="clear-button" class="card-body main-buttons">
+									<a>Clear</a>
+								</div>
+							</div>
+							<div class="card slider-card">
+								<div class="card-body slider-body">
+									<a class="slider-title">Speed</a>
+									<input id="speed-slider" data-slider-id='speed-slider' type="text" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="90"/>
+									<a id="speed-text">90</a>
+								</div>
+							</div>
+							<div class="card slider-card">
+								<div class="card-body slider-body"> 
+									<a class="slider-title">Zoom</a>
+									<input id="size-slider" data-slider-id='size-slider' type="text" data-slider-min="1" data-slider-max="15" data-slider-step="1" data-slider-value="9"/>
+									<a id="size-text">10</a>
+								</div> 
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>		
+		</div>
+	<body>
+</html>
